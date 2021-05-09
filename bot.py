@@ -22,7 +22,6 @@ async def process_help_command(message: types.Message):
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
-    # print(msg.text)
     msg.text = translator.translate(str(msg.text))
     await bot.send_message(msg.from_user.id, msg.text)
 
